@@ -1,0 +1,23 @@
+.container {
+	position:absolute;
+	text-align:center;
+	left:0;
+	top:200px;
+	font-size:64px;
+}
+/* i globuli sono grossi 200 */
+#container_a {
+	left:20px;
+}
+#container_e {
+	left:220px;
+}
+#container_i {
+	left:420px;
+}
+#container_o {
+	left:620px;
+}
+#container_u {
+	left:820px;
+}
