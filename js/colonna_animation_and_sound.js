@@ -1,17 +1,15 @@
+currentWord = "tantaint"
 
-counter = 1;
-numeroFrame = 10;
+counter = 1
 timer_anim1=null;
 timer_anim2=null;
-
-
 prima = true;
 
 start();
 
 function start(){
-$('#player')[0].load();	
-$('#player')[0].play();
+	$('#player')[0].load();	
+	$('#player')[0].play();
 	$("#animazione").bind("click", function(){
 		if (prima){
 			playAudio1()
@@ -30,13 +28,22 @@ function setAndPlayNewSource(source){
 		var sourceAttuale = $('#player')[0].src;
 		
 		if (source == 2){
-			sourceDaMettere = 2
-			sourceDaTogliere = 1
-			console.log('metti due')
+			
+			sourceDaMettere 	= 2
+			sourceDaTogliere 	= 1
+			if (debug_audio_change){
+				console.log('metti due')
+			}
+
 		} else if (source == 1){
-			console.log('metti uno')
-			sourceDaMettere = 1
-			sourceDaTogliere = 2
+
+			
+			sourceDaMettere 	= 1
+			sourceDaTogliere 	= 2
+			if (debug_audio_change){
+				console.log ('metti uno')
+			}
+
 		}
 
 		var posizione 	= sourceAttuale.lastIndexOf(sourceDaTogliere)
@@ -54,15 +61,7 @@ function playAudio1(){
 }
 function playAudio2(){
 	if (counter > 5){
-
 		setAndPlayNewSource(1)
-		/*
-		var sourceAttuale = $('#player')[0].src;
-		var posizione = sourceAttuale.lastIndexOf("1")
-		var nuovaSource = sourceAttuale.replace('1','2')
-		$('#player')[0].src = nuovaSource;
-		$('#player')[0].play();
-		*/
 	}
 }
 
@@ -78,28 +77,36 @@ function animazione2(){
 	go_backward();
 }
 
+
+altezzaImg = 256;
+
+interval_frame = 10;
+
 function go_forward(){
 	
 	timer_anim1 = setTimeout(function(){
-		var p = 256*counter;
+		var p = altezzaImg*counter;
 		$('#animazione').css('background-position-y','-'+p+'px')
 		
-		if (counter>=numeroFrame){
+		if (counter>=interval_frame){
 		
 		} else {
 			counter++
 			go_forward();
 		}
 
-	}, 10);
-	//console.log('avanti')
-	//console.log(counter)
+	}, interval_frame);
+	if (debug || debug_animation) {
+		console.log('avanti')
+		console.log(counter)
+	}
 }
 
 
 function go_backward(){
+	
 	timer_anim2 = setTimeout(function(){
-		var p = 256*counter;
+		var p = altezzaImg*counter;
 		$('#animazione').css('background-position-y','-'+p+'px')
 		
 		if (counter<=1){
@@ -109,8 +116,11 @@ function go_backward(){
 			go_backward();
 		}
 
-	}, 10);
-	//console.log('indietro')
-	//console.log(counter)
+	}, interval_frame);
+
+	if (debug || debug_animation){
+		console.log('indietro')
+		console.log(counter)
+	}
 	
 }
