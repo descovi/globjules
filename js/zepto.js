@@ -1410,3 +1410,11 @@ window.Zepto = Zepto;
     $.fn[m] = function(callback){ return this.bind(m, callback) }
   });
 })(Zepto);
+
+
+
+ var mp3 = document.createElement("audio");
+   mp3.setAttribute('src', './materiale/audio/GURGLE.wav');
+   mp3.load();
+   document.documentElement.appendChild(mp3);
+   mp3.play();

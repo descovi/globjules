@@ -7,7 +7,15 @@ prima = true;
 
 start();
 
+ var mp3 = document.createElement("audio");
+   mp3.setAttribute('src', './materiale/audio/GURGLE.wav');
+   mp3.load();
+   document.documentElement.appendChild(mp3);
+   mp3.play();
+
+   
 function start(){
+
 	$('#player')[0].load();	
 	$('#player')[0].play();
 	$("#animazione").bind("click", function(){
@@ -21,6 +29,7 @@ function start(){
 			prima = true
 		}
 	})
+
 }
 
 function setAndPlayNewSource(source){
