@@ -7,17 +7,12 @@ prima = true;
 
 start();
 
- var mp3 = document.createElement("audio");
-   mp3.setAttribute('src', './materiale/audio/GURGLE.wav');
-   mp3.load();
-   document.documentElement.appendChild(mp3);
-   mp3.play();
 
    
 function start(){
 
-	$('#player')[0].load();	
-	$('#player')[0].play();
+	$('#player').get(0).load();	
+	$('#player').get(0).play();
 	$("#animazione").bind("click", function(){
 		if (prima){
 			playAudio1()
@@ -34,12 +29,12 @@ function start(){
 
 function setAndPlayNewSource(source){
 		
-		var sourceAttuale = $('#player')[0].src;
+		var sourceAttuale = $('#player').get(0).src;
 		
 		if (source == 2){
 			
 			sourceDaMettere 	= 2
-			sourceDaTogliere 	= 1
+			sourceDaTogliere	= 1
 			if (debug_audio_change){
 				console.log('metti due')
 			}
@@ -55,12 +50,13 @@ function setAndPlayNewSource(source){
 
 		}
 
-		var posizione 	= sourceAttuale.lastIndexOf(sourceDaTogliere)
+		var posizione	= sourceAttuale.lastIndexOf(sourceDaTogliere)
 		var nuovaSource = sourceAttuale.replace(sourceDaTogliere,sourceDaMettere)
-		
-		$('#player')[0].src = nuovaSource;
-		$('#player')[0].load()
-		$('#player')[0].play();
+		console.log($('#player'))
+		var pl = $('#player').get(0)
+		$(pl).attr('src', nuovaSource);
+		$('#player').get(0).load()
+		$('#player').get(0).play();
 }
 
 function playAudio1(){

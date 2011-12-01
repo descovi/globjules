@@ -1,4 +1,4 @@
-console.log($('#freccia_su').get(0))
+
 
 $('#freccia_su').bind('click',function(){
 	console.log('click freccia SU ^')
@@ -37,7 +37,7 @@ function verifica_frecce(){
 
 function change_dati(giu_o_su){
 
-	var percorso_base = $('#player')[0].src;
+	var percorso_base = $('#player').first().attr('src');
 	console.log(index_attuale);
 
 	var parole_da_cambiare = $('#dati ol').get(index_attuale).innerHTML;
@@ -56,18 +56,20 @@ function change_dati(giu_o_su){
 	verifica_frecce();
 
 
-	var parole_da_inserire = $('#dati ol')[index_attuale].innerHTML;
+	var parole_da_inserire = $('#dati ol').get(index_attuale).innerHTML;
 	
 	var nuovo_percorso = percorso_base.replace(parole_da_cambiare,parole_da_inserire)
 
+	var pl = $('#player').get(0)
+	$(pl).attr('src', nuovo_percorso);
+	pl.load();
+	pl.play();
 
-	$('#player')[0].src = nuovo_percorso;
-	$('#player')[0].load()
-	$('#player')[0].play();
-	
-	console.log($('#animazione').css('background-image'));
+	//var anim = $('#animazione').get(0);	
 	
 	var vecchiaImg = $('#animazione').css('background-image');
+	console.log('vecchia')
+	console.log(vecchiaImg)
 	var nuovaImg = vecchiaImg.replace(parole_da_cambiare,parole_da_inserire)
 	
 	console.log(nuovaImg);
