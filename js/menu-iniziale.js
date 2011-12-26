@@ -1,35 +1,48 @@
-$('.container').bind('click',function(e){
-	
+/*
+
+LISTENER
+========
+
+*/
+$(document).ready(function(){
+	$('.container').bind('click',containerClicked)
+	$('.lettera_testuale').bind('click', openColonna)
+	console.log('succedo')
+})
+
+/******************** CLICK SU PUPAZZO ********************/
+// FA PARTIRE ANIMAZIONE E SUONO //
+var intervalAnim;
+
+function containerClicked(e){
 	var suono_vocale = $(this).find('audio').get(0)
 	suono_vocale.play();
-
-
-	if ($(this).find('.lettera_testuale').get(0).innerHTML == 'a'){
-
-	play_animazione_pronuncia(this);
+	var letteraCliccata = $(this).find('.lettera_testuale').get(0).innerHTML;
+	play_animazione_pronuncia(this, letteraCliccata);
 }
-	
-})
-var intervalloAnimazione;
-function play_animazione_pronuncia(cosa){
+
+function play_animazione_pronuncia(_cosa, _letteraCliccata){
 	var counter = 1;
-	clearInterval(intervalloAnimazione);
-	intervalloAnimazione= setInterval(function(){
+	clearInterval(intervalAnim);
+	intervalAnim = setInterval(
+	function(){
 		counter++;
-		
-		$(cosa).find('img').attr('src','materiale/menu-iniziale/a/'+counter+'.png');
+		var path = 'materiale/menu-iniziale/'+_letteraCliccata+'/'+counter+'.png';
+		$(_cosa).find('img').attr('src',path);
 		if (counter>17){
 			counter = 17;
 		}
 	},60)
 }
 
+/******************** CLICK SU LETTERA ********************/
+// CAMBIA PAGINA //
 
-$('#lettera_a').bind('click', function(){
-	location.href="colonna.html"
-})
-
-
+function openColonna(e){
+	
+	var letteraDaPassare = e.target.innerHTML
+	location.href="colonna.html?lettera="+letteraDaPassare;
+}
 	
 setInterval(muoviAncora,1000)
 function muoviAncora(e){
@@ -38,6 +51,3 @@ function muoviAncora(e){
 		$(e).anim({translate3d: '0,'+randomnumber+',0'}, 1, 'linear');
 	})
 }
-
-
-console.log($('.container'))

@@ -468,11 +468,3 @@ var Zepto = (function() {
 
 window.Zepto = Zepto;
 '$' in window || (window.$ = Zepto);
-
-
-var mp3 = document.createElement("audio");
-mp3.setAttribute('src', './materiale/audio/GURGLE.wav');
-mp3.load();
-mp3.play()
-console.log(mp3);
-

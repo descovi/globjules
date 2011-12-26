@@ -5,10 +5,10 @@ timer_anim1=null;
 timer_anim2=null;
 prima = true;
 
-start();
-
-
-   
+$(document).ready(function(){
+start();	
+})
+ 
 function start(){
 
 	$('#player').get(0).load();	
