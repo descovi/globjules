@@ -39,9 +39,9 @@ function play_animazione_pronuncia(_cosa, _letteraCliccata){
 // CAMBIA PAGINA //
 
 function openColonna(e){
-	
 	var letteraDaPassare = e.target.innerHTML
 	location.href="colonna.html?lettera="+letteraDaPassare;
+	console.log(letteraDaPassare)
 }
 	
 setInterval(muoviAncora,1000)

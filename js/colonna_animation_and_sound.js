@@ -6,11 +6,10 @@ timer_anim2=null;
 prima = true;
 
 $(document).ready(function(){
-start();	
+	start();	
 })
  
 function start(){
-
 	$('#player').get(0).load();	
 	$('#player').get(0).play();
 	$("#animazione").bind("click", function(){

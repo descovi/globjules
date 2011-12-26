@@ -1,6 +1,6 @@
-var param = parseURLParams(location.href);
-var letteraCorrente = param.lettera[0];
-console.log()
+
+
+
 // CAMBIA PAROLA A LIVELLO DI DATI
 $('#freccia_su').bind('click',function(){change_dati(-1);})
 $('#freccia_giu').bind('click',function(){change_dati(+1)})
