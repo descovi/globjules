@@ -94,6 +94,7 @@ body {
 	left:250px;
 }
 
-#dati {
+.dati {
+	position:absolute;
 	display:none;
 }

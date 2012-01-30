@@ -7,7 +7,6 @@ LISTENER
 $(document).ready(function(){
 	$('.container').bind('click',containerClicked)
 	$('.lettera_testuale').bind('click', openColonna)
-	console.log('succedo')
 })
 
 /******************** CLICK SU PUPAZZO ********************/
