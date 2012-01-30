@@ -55,8 +55,8 @@ function change_dati(giu_o_su){
 	//AUDIO PLAY 
 
 	var nuovo_percorso = percorso_base.replace(parole_da_cambiare,parole_da_inserire)
-	var nuovo_percorso = nuovo_percorso.replace('2','1');
-
+	var nuovo_percorso = nuovo_percorso.replace('2.mp3','1.mp3');
+	console.log(nuovo_percorso)
 	var pl = $('#player').get(0)
 	$(pl).attr('src', nuovo_percorso);
 
@@ -68,9 +68,11 @@ function change_dati(giu_o_su){
 
 	$('#animazione').css('background-image',nuova_img)
 	
-	//reset posizi
+	//RESET DI VARIABILI CHE VENGONO USATE E IMPOSTANO DISCORSI PER
+	// COLONNA_ANIMATION_AND_SOUND.JS
 	$('#animazione').css('background-position-y','0px')
-
+	prima = true;
+	counter = 1;
 
 
 }

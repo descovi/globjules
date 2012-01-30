@@ -51,7 +51,6 @@ function setAndPlayNewSource(source){
 
 		var posizione	= sourceAttuale.lastIndexOf(sourceDaTogliere)
 		var nuovaSource = sourceAttuale.replace(sourceDaTogliere,sourceDaMettere)
-		console.log($('#player'))
 		var pl = $('#player').get(0)
 		$(pl).attr('src', nuovaSource);
 		$('#player').get(0).load()
