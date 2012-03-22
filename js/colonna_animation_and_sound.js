@@ -55,6 +55,7 @@ function setAndPlayNewSource(source){
 		$(pl).attr('src', nuovaSource);
 		$('#player').get(0).load()
 		$('#player').get(0).play();
+		console.log(nuovaSource);
 }
 
 function playAudio1(){

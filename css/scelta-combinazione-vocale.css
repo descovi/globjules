@@ -1,0 +1,26 @@
+a {
+	;
+}
+.first {
+	color:red;
+	font-size:220px;
+}
+
+.cont span:last-child {
+	color:green;
+		font-size:220px;
+
+}
+
+.plus{
+	position: relative;
+	top:-20px;
+}
+
+.cont {
+	display: block;
+	width:500px;
+	margin:0 auto;
+	font-size:100px;
+	text-align:center;
+}

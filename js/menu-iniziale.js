@@ -1,16 +1,13 @@
-/*
+// # LISTENER
 
-LISTENER
-========
-
-*/
 $(document).ready(function(){
 	$('.container').bind('click',containerClicked)
 	$('.lettera_testuale').bind('click', openColonna)
 })
 
-/******************** CLICK SU PUPAZZO ********************/
+// # CLICK SU PUPAZZO 
 // FA PARTIRE ANIMAZIONE E SUONO //
+
 var intervalAnim;
 
 function containerClicked(e){
@@ -35,11 +32,28 @@ function play_animazione_pronuncia(_cosa, _letteraCliccata){
 }
 
 /******************** CLICK SU LETTERA ********************/
+
 // CAMBIA PAGINA //
 
 function openColonna(e){
 	var letteraDaPassare = e.target.innerHTML
-	location.href="colonna.html?lettera="+letteraDaPassare;
+	
+	//se la lettera è la i o la u si passa direttamente alla colonna
+	// altrimenti si passa per la scelta della combinazione.
+
+	if (letteraDaPassare == 'i' || letteraDaPassare == 'u'){
+				
+		if (letteraDaPassare == 'u'){
+			letteraDaPassare = 'u-e'
+		} 
+		if (letteraDaPassare == 'i'){
+			letteraDaPassare = 'i-e'
+		}
+		
+		location.href="colonna.html?lettera="+letteraDaPassare;
+	} else {
+		location.href="scelta-combinazione-vocale.html?lettera="+letteraDaPassare;
+	}
 	console.log(letteraDaPassare)
 }
 	
