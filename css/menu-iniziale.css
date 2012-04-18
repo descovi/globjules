@@ -2,23 +2,27 @@
 	position:absolute;
 	text-align:center;
 	left:0;
-	top:200px;
-	font-size:64px;
+	top:400px;
+	font-size:44px;
 }
 
-/* i globuli sono grossi 200 */
-#container_a {
-	left:20px;
+
+/* i globuli animati */
+.fila{position: absolute;}
+#container-show{position: relative;}
+#container-show li{float:left;list-style-type:none;left:20px}
+#prima-fila{top:100px}
+#seconda-fila{top:200px;padding-top:100px;}
+
+/* le frecce che linkano alle varie lettere */
+.container {
+  background-image:url('../materiale/menu-iniziale/freccia.png');
+  width:74px;
+  height:64px;
 }
-#container_e {
-	left:220px;
-}
-#container_i {
-	left:420px;
-}
-#container_o {
-	left:620px;
-}
-#container_u {
-	left:820px;
-}
+.lettera_testuale{color:#000;}
+#container_a {left: 20px;}
+#container_e {left:220px;}
+#container_i {left:420px;}
+#container_o {left:620px;}
+#container_u {left:820px;}
