@@ -10,7 +10,7 @@
 /* i globuli animati */
 .fila{position: absolute;}
 #container-show{position: relative;}
-#container-show li{float:left;list-style-type:none;left:20px}
+#container-show li{float:left;list-style-type:none;margin-right:100px}
 #prima-fila{top:100px}
 #seconda-fila{top:200px;padding-top:100px;}
 
