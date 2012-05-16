@@ -43,19 +43,8 @@ function openColonna(e){
 	//se la lettera è la i o la u si passa direttamente alla colonna
 	// altrimenti si passa per la scelta della combinazione.
 
-	if (letteraDaPassare == 'i' || letteraDaPassare == 'u'){
-				
-		if (letteraDaPassare == 'u'){
-			letteraDaPassare = 'u-e'
-		} 
-		if (letteraDaPassare == 'i'){
-			letteraDaPassare = 'i-e'
-		}
-		
-		location.href="colonna.html?lettera="+letteraDaPassare;
-	} else {
-		location.href="scelta-combinazione-vocale.html?lettera="+letteraDaPassare;
-	}
+	/**/
+	location.href = "confronto.html?lettera="+letteraDaPassare;
 	console.log(letteraDaPassare)
 }
 	

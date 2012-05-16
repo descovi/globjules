@@ -1,14 +1,14 @@
 a = parseURLParams(location.href)
 
 $(document).ready(function(){
-	var lettera_scelta = a.lettera[0]
+	lettera_scelta = a.lettera[0]
 	var path_root_long = './materiale/menu-iniziale/sul_palco/long-'
 	var path_root_short = './materiale/menu-iniziale/sul_palco/short-'
 
 	var path1 = path_root_short+lettera_scelta+'.png'
 	var path2 = path_root_long+lettera_scelta+'.png'
 
-	var path_audio = './materiale/audio/vocali/A_'
+	var path_audio = './materiale/audio/vocali/'+lettera_scelta+'_'
 	
 
 	$('#lettera1 img').attr('src',path1)
@@ -19,10 +19,27 @@ $(document).ready(function(){
 	$('#lettera2 audio').attr('src',path_audio+'L.mp3')
 
 	$('.lettera img').click(function(){
-		var audio = $(this).find('audio')
-		console.log(audio)
+		var audio = $(this).parent().find('audio')
 		audio[0].play()
 	})
 
+	$('.lettera div').click(function(){
+		if (lettera_scelta == 'i' || lettera_scelta == 'u'){
+				
+			if (lettera_scelta == 'u'){
+				lettera_scelta = 'u-e'
+			} 
+			
+			if (lettera_scelta == 'i'){
+				lettera_scelta = 'i-e'
+			}	
+			
+			location.href="colonna.html?lettera="+lettera_scelta;
+			
+			} else {
+			
+			location.href="scelta-combinazione-vocale.html?lettera="+lettera_scelta;
+		}
 	
+	})
 })
