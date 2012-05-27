@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$('#freccia_su').bind('click',function(){change_dati(-1);})
 	$('#freccia_giu').bind('click',function(){change_dati(+1)})
 	// MOSTRA VOCABOLARIO	//
-	$('#punto_di_domanda').bind('click',function(){$('#vocabolario').show();})
+	$('#punto_di_domanda').bind('click',generate_and_show_vocabolario)
 	// NASCONDI VOCABOLARIO //
 	$('#vocabolario').bind('click',function(){$(this).hide();})
 
@@ -27,13 +27,16 @@ function verifica_frecce(){
 		$('#freccia_su a').css('background-color','transparent')	
 	}
 }
-
+parola = new Object()
+parola.da_cambiare = ""
+parola.da_inserire = ""
 // CHANGE DATI
 function change_dati(giu_o_su){
 	var percorso_base = $('#player').first().attr('src');
 
 	//1. prima del cambio di index
 	var parole_da_cambiare = $(dati_da_guardare+' ol').get(index_attuale).innerHTML;
+	parola.da_cambiare = parole_da_cambiare
 
 	if (giu_o_su == 1 ){
 		index_attuale++;
@@ -50,7 +53,7 @@ function change_dati(giu_o_su){
 
 	//2. dopo il cambio di index
 	var parole_da_inserire = $(dati_da_guardare+' ol').get(index_attuale).innerHTML;
-
+	parola.da_inserire = parole_da_inserire
 
 	//AUDIO PLAY 
 
@@ -75,4 +78,9 @@ function change_dati(giu_o_su){
 	counter = 1;
 
 
+}
+
+function generate_and_show_vocabolario(){
+	$('#vocabolario').show();
+	console.log(parola)
 }

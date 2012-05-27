@@ -65,7 +65,7 @@ function play_anim(_this){
 		active_path = path_confronto.long
 	}
 
-	interval_animation = window.setInterval(animate, 60,{el:_this});  
+	interval_animation = window.setInterval(animate, 30,{el:_this});  
 }
 
 function animate(_par){
