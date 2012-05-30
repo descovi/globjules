@@ -1,15 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<title>Start</title>
-<link href="css/common.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
-<h1><a href="intro.html">animazione, video<br><br>tocca per continuare</a></h1>
-</body>
-</html>
-	
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><title>Start</title><link href="css/common.css" rel="stylesheet" type="text/css" /></head><body>
+<video width="1024" height="768" autoplay="autoplay" src="video3.m4v" id="video">
+</video>
+<script>
+document.getElementById('video').addEventListener('click',function(){
+	location.href = 'intro.html'
+})
+</script>
+</body></html>
