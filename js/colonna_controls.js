@@ -82,6 +82,22 @@ function change_dati(giu_o_su){
 
 function generate_and_show_vocabolario(){
 	// qui vanno impostate le parole
+
+	var parole_da_spiegare = $(dati_da_guardare+' ol').get(index_attuale).innerHTML
+	 
+	var english_word_1 = $('#'+parole_da_spiegare).find('h3').get(0)
+	var ita_word_1 = $('#'+parole_da_spiegare).find('p').get(0)
+
+	var english_word_2 = $('#'+parole_da_spiegare).find('h3').get(1)
+	var ita_word_2 = $('#'+parole_da_spiegare).find('p').get(1)
+
+	$('#vocabolario .word1').text($(english_word_1).text())
+	$('#vocabolario .word2').text($(english_word_2).text())
+	$('#vocabolario p').eq(0).text($(ita_word_1).text())
+	$('#vocabolario p').eq(1).text($(ita_word_2).text())
+	console.log(parole_da_spiegare)
+	console.log(english_word_1)
+	console.log(ita_word_1)
 	$('#vocabolario').show();
 
 }
