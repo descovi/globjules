@@ -81,6 +81,7 @@ function change_dati(giu_o_su){
 }
 
 function generate_and_show_vocabolario(){
+	// qui vanno impostate le parole
 	$('#vocabolario').show();
-	console.log(parola)
+
 }
