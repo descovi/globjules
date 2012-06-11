@@ -1,26 +1,68 @@
-a {
-	;
+.cont {
+	display: block;
+	width:690px;
+	margin:0 auto;
+	font-size:100px;
+	position: relative;
+
 }
+.row{
+	position: relative;
+	width:690px;
+	background-color: #ccc;
+}
+.cont_1{
+	position: relative;
+	top:20px;
+
+}
+.cont_2{
+	position: relative;
+	top:300px;
+
+}
+
+
+
 .first {
+	position: absolute;
 	color:red;
 	font-size:220px;
 }
 
-.cont span:last-child {
-	color:green;
-		font-size:220px;
-
+.plus,.equal{
+	position: absolute;
+	top:90px;
 }
-
 .plus{
-	position: relative;
-	top:-20px;
+	left:148px;
+}
+.equal {
+	left:445px;
+}
+.middle-container{
+	position: absolute;
+	display:inline;
+	color:black;
+	font-size:220px;
+	background-repeat:no-repeat;
+	background-position: center 46px;
+	background-color:#000;
+	width:212px;
+	height:302px;
+	background-image:url('../materiale/sfondo.png');
+	left:220px;
+	text-align: center;
+}
+.middle{
+	text-align:center;
+	width:210px;
 }
 
-.cont {
-	display: block;
-	width:500px;
-	margin:0 auto;
-	font-size:100px;
-	text-align:center;
+.result {
+	position: absolute;
+	color:green;
+	font-size:220px;
+	left:520px;
 }
+
