@@ -22,3 +22,19 @@ h1 {
 	margin:0 auto;
 	margin-top:200px;
 }
+
+/* little monster fa tornare indietro */
+
+.littlemonster a{
+	display:block;
+	width:200px;
+	height:200px;
+	position:absolute;
+	right:0;
+	top:0;
+}
+
+
+.littlemonster-without-image a{
+	background-color:#f00;
+}

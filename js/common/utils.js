@@ -20,3 +20,14 @@ function parseURLParams(url) {
   }
   return params;
 }
+
+Zepto(function(e){
+  $('.littlemonster #go_back').on('click',function(e){
+    console.log('Torno indietro. utils.js')
+    history.back();
+    e.preventDefault()
+    return false
+  })
+  console.log($('.littlemonster #go_back'))
+  console.log('-')
+})

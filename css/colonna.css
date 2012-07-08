@@ -6,14 +6,6 @@ body {
 *,a{
 	-webkit-tap-highlight-color:rgba(0,0,0,0);
 }
-#littlemonster a{
-	display:block;
-	width:200px;
-	height:200px;
-	position:absolute;
-	right:0;
-	top:0;
-}
 
 #punto_di_domanda a{
 	/*background-color:green;*/

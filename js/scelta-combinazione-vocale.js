@@ -4,12 +4,11 @@ pagina.parametri = parseURLParams(location.href)
 var lettera_scelta = pagina.parametri.lettera
 
 
-$(document).ready(start)
+Zepto(start)
 
 
 function start(e){
-	$('.cont').each(function(index){
-		$(index).hide();
-	})
+	$('.cont').hide()
 	$('#lettera_'+lettera_scelta).show();
+	console.log(lettera_scelta)
 }
