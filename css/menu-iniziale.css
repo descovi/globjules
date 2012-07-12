@@ -9,9 +9,23 @@
 
 /* i globuli animati */
 .fila{position: absolute;}
-#container-show{position: relative;}
-#container-show li{float:left;list-style-type:none;margin-right:100px}
-#prima-fila{top:100px}
+#container-show{
+	position: relative;
+	left:10px;
+}
+.fila li{
+	float:left;
+	list-style-type:none;
+	margin-right:100px;
+	width:100px;
+}
+
+.fila li:last-child{
+	margin-right: 0;
+}
+
+#container-show 
+#prima-fila{top:80px}
 #seconda-fila{top:200px;padding-top:100px;}
 
 /* le frecce che linkano alle varie lettere */

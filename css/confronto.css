@@ -1,3 +1,7 @@
 .lettera{
 	float: left
 }
+.lettera .link_next{
+	font-size: 48px;
+	text-align: center;
+}
