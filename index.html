@@ -14,12 +14,27 @@
     <script src="cordova-1.8.0.js"></script>
 <video width="1024" height="768"  autoplay src="video-ipod.m4v" id="video">
 </video>
-        <div id="loadStatus"></div>
+        <div id="skip_btn" class="skip_btn">Avanti</div>
 <script>
-video = document.getElementById('video')    
-video.addEventListener('click',function(){
-  alert('hai cliccato sul video')
+document.getElementById('video').addEventListener('ended',function(){
+  //location.href="intro.html"
+})
+document.getElementById('skip_btn').addEventListener('click',function(){
   location.href="intro.html"
 })
 </script>
+<style>
+.skip_btn{
+  background-color: #114FFD;
+  padding:20px;
+  position: absolute;
+  left:500px;
+  top:620px;
+  height:auto;
+  border-radius: 20px
+}
+.skip_btn:hover{
+  background-color: #115ffd;
+}
+</style>
 </body></html>
