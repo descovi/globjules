@@ -1,10 +1,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><title>Start</title><link href="css/common.css" rel="stylesheet" type="text/css" /></head><body>
-<video width="1024" height="768" autoplay="autoplay" src="video3.m4v" id="video">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <title>Start</title>
+        <link href="css/common.css" rel="stylesheet" type="text/css" />
+    </head>
+    
+    <body>
+    <script src="cordova-1.8.0.js"></script>
+<video width="1024" height="768"  autoplay src="video-ipod.m4v" id="video">
 </video>
+        <div id="loadStatus"></div>
 <script>
-document.getElementById('video').addEventListener('click',function(){
-	location.href = 'intro.html'
+video = document.getElementById('video')    
+video.addEventListener('click',function(){
+  alert('hai cliccato sul video')
+  location.href="intro.html"
 })
 </script>
 </body></html>
