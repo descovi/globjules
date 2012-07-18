@@ -3,6 +3,16 @@ path_confronto = new Object();
 path_confronto.long = './materiale/menu-iniziale/sul_palco/long-'
 path_confronto.short =  './materiale/menu-iniziale/sul_palco/short-'
 path_confronto.lettera = a.lettera[0]
+
+var lettera1_audio;
+var lettera2_audio;
+can_play = true
+//path per le animazioni e i percorsi relativi
+counter = 1
+active_path=""
+active=""
+
+
 $(document).ready(function(){
 	lettera_scelta = path_confronto.lettera
 
@@ -16,12 +26,26 @@ $(document).ready(function(){
 	$('#lettera2 img').attr('src',path2)
 	$('#lettera1 div').html(path_confronto.lettera)
 	$('#lettera2 div').html(lettera_scelta)
+	//impost l'audio
 	$('#lettera1 audio').attr('src',path_audio+'S.mp3')
 	$('#lettera2 audio').attr('src',path_audio+'L.mp3')
+	//caricamento effettuato per andare su ipad.
+	lettera1_audio = $('#lettera1 audio')[0]
+	lettera2_audio = $('#lettera2 audio')[0]
+	lettera1_audio.load()
+	lettera2_audio.load()
 
-	$('.lettera img').click(function(){
-		play_audio(this)
-		play_anim(this)
+		$('#lettera1 img').click(function(){
+
+			play_audio_1(this)
+			play_anim(this)
+
+	})
+	$('#lettera2 img').click(function(){
+
+			play_audio_2(this)
+			play_anim(this)
+
 	})
 
 	$('.lettera div').click(function(){
@@ -45,15 +69,33 @@ $(document).ready(function(){
 	})
 })
 
-function play_audio(_this){
-	var audio = $(_this).parent().find('audio')
-	audio[0].load()
-	audio[0].play()
+function play_audio_1(_this){
+	//stop other channel
+	if (lettera2_audio.currentTime){
+		lettera2_audio.pause()
+	}
+	
+	//restart (eventually) if press the same lettera
+	lettera1_audio.pause();
+	if (lettera1_audio.currentTime){
+		lettera1_audio.currentTime = 0.1;
+	}
+	lettera1_audio.play();
+}
+function play_audio_2(_this){
+	//stop other channel
+	if (lettera1_audio.currentTime){
+		lettera1_audio.pause()
+	}
+
+	//restart (eventually) if press the same lettera
+	lettera2_audio.pause();
+	if (lettera2_audio.currentTime){
+		lettera2_audio.currentTime = 0.1;
+	}
+	lettera2_audio.play();
 }
 
-counter = 1
-active_path=""
-active=""
 
 function play_anim(_this){
 	stop_animate();
@@ -68,6 +110,28 @@ function play_anim(_this){
 	interval_animation = window.setInterval(animate, 30,{el:_this});  
 }
 
+
+	function preload(){
+		 var preload_image_object_short = new Image();
+		 var preload_image_object_long = new Image();
+      // set image url
+      var image_url_short = new Array();
+ 			var image_url_long = new Array();
+
+
+       var i = 1;
+
+       for(i=1; i<=25; i++) {
+       	image_url_short[i]= path_confronto.short+path_confronto.lettera+'/'+i+'.png'
+       	image_url_long[i]= path_confronto.long+path_confronto.lettera+'/'+i+'.png'
+       }
+
+       for(i=1; i<25; i++) {
+         preload_image_object_short.src = image_url_short[i];
+         preload_image_object_long.src = image_url_long[i];
+    	}
+	}
+
 function animate(_par){
 	counter++
 	if (counter > 24){
@@ -78,7 +142,6 @@ function animate(_par){
 
 	path_img_nuova = active_path+path_confronto.lettera+'/'+counter+'.png'
 	$(_par.el).attr('src',path_img_nuova)
-
 }
 function stop_animate(){
 	if (active_path !=""){
