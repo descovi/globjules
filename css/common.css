@@ -27,8 +27,8 @@ h1 {
 
 .littlemonster a{
 	display:block;
-	width:200px;
-	height:200px;
+	width:100px;
+	height:100px;
 	position:absolute;
 	right:0;
 	top:0;
@@ -36,5 +36,7 @@ h1 {
 
 
 .littlemonster-without-image a{
-	background-color:#f00;
+	background-image:url('../materiale/torna_indietro.png');
+	text-indent: -9999px;
+	background-size:100px;
 }
