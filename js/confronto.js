@@ -30,8 +30,8 @@ $(document).ready(function(){
 	$('#lettera1 audio').attr('src',path_audio+'S.mp3')
 	$('#lettera2 audio').attr('src',path_audio+'L.mp3')
 	//caricamento effettuato per andare su ipad.
-	lettera1_audio = $('#lettera1 audio')[0]
-	lettera2_audio = $('#lettera2 audio')[0]
+	lettera1_audio = $('#lettera1 audio').get(0)
+	lettera2_audio = $('#lettera2 audio').get(0)
 	lettera1_audio.load()
 	lettera2_audio.load()
 
@@ -70,29 +70,13 @@ $(document).ready(function(){
 })
 
 function play_audio_1(_this){
-	//stop other channel
-	if (lettera2_audio.currentTime){
-		lettera2_audio.pause()
-	}
-	
-	//restart (eventually) if press the same lettera
-	lettera1_audio.pause();
-	if (lettera1_audio.currentTime){
-		lettera1_audio.currentTime = 0.1;
-	}
+    $(lettera1_audio).attr('src',lettera1.src)
+	lettera1_audio.load();
 	lettera1_audio.play();
 }
 function play_audio_2(_this){
-	//stop other channel
-	if (lettera1_audio.currentTime){
-		lettera1_audio.pause()
-	}
-
-	//restart (eventually) if press the same lettera
-	lettera2_audio.pause();
-	if (lettera2_audio.currentTime){
-		lettera2_audio.currentTime = 0.1;
-	}
+	$(lettera2_audio).attr('src',lettera2.src)
+	lettera2_audio.load();
 	lettera2_audio.play();
 }
 

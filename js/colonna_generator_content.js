@@ -56,7 +56,7 @@ function setupFirstWords(){
 
 	$('body').css(
 		'background-image',
-		'url(\'../glob_html/materiale/colonna/sfondi/'+currentLetter+'.png\')'
+		'url(\'materiale/colonna/sfondi/'+currentLetter+'.png\')'
 	);
 	
 }
