@@ -62,7 +62,6 @@ function change_dati(giu_o_su){
 	console.log(nuovo_percorso)
 	var pl = $('#player').get(0)
 	$(pl).attr('src', nuovo_percorso);
-
 	pl.load();
 	pl.play();
 

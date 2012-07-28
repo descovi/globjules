@@ -53,7 +53,7 @@ function setAndPlayNewSource(source){
 		var nuovaSource = sourceAttuale.replace(sourceDaTogliere,sourceDaMettere)
 		var pl = $('#player').get(0)
 		$(pl).attr('src', nuovaSource);
-		$('#player').get(0).load()
+		$('#player').get(0).load();
 		$('#player').get(0).play();
 		console.log(nuovaSource);
 }

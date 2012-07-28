@@ -97,6 +97,7 @@ function playAnimFila(fila){
 }
 
 function set_glob_active(){
+  /*
   console.log('----------------------------')
   console.log('     SET GLOB ACTIVE        ')
   console.log('----------------------------')
@@ -104,7 +105,7 @@ function set_glob_active(){
   console.log('counter_temp: ' + counter_temp)
   console.log('----------------------------')
   console.log('----------------------------')
- 
+ */
   if (counter_tot < 5){
     fila = fila_choose
   } else {
