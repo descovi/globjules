@@ -32,8 +32,8 @@ function setAndPlayNewSource(source){
 		
 		if (source == 2){
 			
-			sourceDaMettere 	= 2
-			sourceDaTogliere	= 1
+			sourceDaMettere 	= 2+".mp3"
+			sourceDaTogliere	= 1+".mp3"
 			if (debug_audio_change){
 				console.log('metti due')
 			}
@@ -41,21 +41,24 @@ function setAndPlayNewSource(source){
 		} else if (source == 1){
 
 			
-			sourceDaMettere 	= 1
-			sourceDaTogliere 	= 2
+			sourceDaMettere 	= 1+".mp3"
+			sourceDaTogliere 	= 2+".mp3"
 			if (debug_audio_change){
 				console.log ('metti uno')
 			}
 
 		}
-
 		var posizione	= sourceAttuale.lastIndexOf(sourceDaTogliere)
+		console.log("sourceDaTogliere: "+sourceDaTogliere)
+		console.log("posizione trovata: "+posizione)
+		console.log(sourceAttuale)
 		var nuovaSource = sourceAttuale.replace(sourceDaTogliere,sourceDaMettere)
+		console.log(nuovaSource)
+		console.log('---')
 		var pl = $('#player').get(0)
 		$(pl).attr('src', nuovaSource);
 		$('#player').get(0).load();
 		$('#player').get(0).play();
-		console.log(nuovaSource);
 }
 
 function playAudio1(){

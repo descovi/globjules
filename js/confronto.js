@@ -36,13 +36,13 @@ $(document).ready(function(){
 	lettera2_audio.load()
 
 		$('#lettera1 img').click(function(){
+alert("cliccato1")
 
-			play_audio_1(this)
-			play_anim(this)
+			play_audio_1(this)			play_anim(this)
 
 	})
 	$('#lettera2 img').click(function(){
-
+alert("cliccato2")
 			play_audio_2(this)
 			play_anim(this)
 
@@ -70,13 +70,15 @@ $(document).ready(function(){
 })
 
 function play_audio_1(_this){
-    $(lettera1_audio).attr('src',lettera1.src)
-	lettera1_audio.load();
+    //$(lettera1_audio).attr('src',lettera1.src)
+	//lettera1_audio.load();
+    alert($(lettera1_audio).attr('src'))
 	lettera1_audio.play();
 }
 function play_audio_2(_this){
-	$(lettera2_audio).attr('src',lettera2.src)
-	lettera2_audio.load();
+	//$(lettera2_audio).attr('src',lettera2.src)
+	//lettera2_audio.load();
+    alert($(lettera2_audio).attr('src'))
 	lettera2_audio.play();
 }
 

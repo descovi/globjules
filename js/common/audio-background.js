@@ -6,3 +6,5 @@ function startAudioBg(e){
 	mp3.volume = 0.2
 	mp3.play()
 }
+
+alert(navigator.orientation)
