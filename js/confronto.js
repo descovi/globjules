@@ -35,17 +35,17 @@ $(document).ready(function(){
 	lettera1_audio.load()
 	lettera2_audio.load()
 
-		$('#lettera1 img').click(function(){
-alert("cliccato1")
+		console.log(lettera1_audio)
 
-			play_audio_1(this)			play_anim(this)
 
+	$('#lettera1 img').click(function(){
+		play_audio_1(this);
+		play_anim(this);
 	})
-	$('#lettera2 img').click(function(){
-alert("cliccato2")
-			play_audio_2(this)
-			play_anim(this)
 
+	$('#lettera2 img').click(function(){
+		play_audio_2(this);
+		play_anim(this);	
 	})
 
 	$('.lettera div').click(function(){
@@ -70,15 +70,9 @@ alert("cliccato2")
 })
 
 function play_audio_1(_this){
-    //$(lettera1_audio).attr('src',lettera1.src)
-	//lettera1_audio.load();
-    alert($(lettera1_audio).attr('src'))
 	lettera1_audio.play();
 }
 function play_audio_2(_this){
-	//$(lettera2_audio).attr('src',lettera2.src)
-	//lettera2_audio.load();
-    alert($(lettera2_audio).attr('src'))
 	lettera2_audio.play();
 }
 
