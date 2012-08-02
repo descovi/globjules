@@ -6,14 +6,45 @@ path_confronto.lettera = a.lettera[0]
 
 var lettera1_audio;
 var lettera2_audio;
+var audio1
+var audio2
 can_play = true
 //path per le animazioni e i percorsi relativi
 counter = 1
 active_path=""
 active=""
 
+ // Wait for Cordova to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // Cordova is ready
+        //
+        function onDeviceReady() {
+					var path_audio = '/materiale/audio/vocali/'+path_confronto.lettera.toUpperCase()+'_'
+      		audio1 = new Media(path_audio+'S.mp3')
+					audio2 = new Media(path_audio+'L.mp3',onSuccess, onError)
+          audio3 = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
+          audio3.play();
+        }
+
+
+ // onSuccess Callback
+        //
+        function onSuccess() {
+            alert("playAudio():Audio Success");
+        }
+
+        // onError Callback 
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' + 
+                  'message: ' + error.message + '\n');
+        }
+
 
 $(document).ready(function(){
+
 	lettera_scelta = path_confronto.lettera
 
 	var path1 = path_confronto.short+lettera_scelta+'/1.png'
@@ -26,25 +57,25 @@ $(document).ready(function(){
 	$('#lettera2 img').attr('src',path2)
 	$('#lettera1 div').html(path_confronto.lettera)
 	$('#lettera2 div').html(lettera_scelta)
+
 	//impost l'audio
-	$('#lettera1 audio').attr('src',path_audio+'S.mp3')
-	$('#lettera2 audio').attr('src',path_audio+'L.mp3')
+	$('#audio1').attr('src',path_audio+'S.mp3')
+	$('#audio2').attr('src',path_audio+'L.mp3')
 	//caricamento effettuato per andare su ipad.
-	lettera1_audio = $('#lettera1 audio').get(0)
-	lettera2_audio = $('#lettera2 audio').get(0)
-	lettera1_audio.load()
-	lettera2_audio.load()
-
-		console.log(lettera1_audio)
-
-
+ 	$('#audio1').get(0).load()
+	$('#audio2').get(0).load()
+	
 	$('#lettera1 img').click(function(){
-		play_audio_1(this);
+		audio1.play()
+
+		alert(audio1)
+		//$('#audio1').get(0).play()
 		play_anim(this);
 	})
 
 	$('#lettera2 img').click(function(){
-		play_audio_2(this);
+		audio2.play()
+		//$('#audio2').get(0).play()
 		play_anim(this);	
 	})
 

@@ -8,12 +8,13 @@
 	<link href="css/menu-iniziale.css" rel="stylesheet" type="text/css" />
 	<link href="css/confronto.css" rel="stylesheet" type="text/css" />
         <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0, user-scalable=no, width=device-width" />
-	<script src="cordova-2.0.0.js"></script>
-        <script src="http://192.168.0.2:8080/target/target-script-min.js#anonymous"></script>
+                <script src="http://192.168.0.2:8080/target/target-script-min.js#anonymous"></script>
 
 	<script src="js/zepto/new/zepto.js"></script>
 	<script src="js/common/utils.js"></script>
-	<!--<script src="js/audio-background.js"></script>-->
+	<script src="js/audio-background.js"></script>
+	<script type="text/javascript" charset="utf-8" src="cordova-2.0.0.js"></script>
+
 	<script src="js/confronto.js"></script>
 	<script src="js/menu-iniziale-show.js"></script>
 
@@ -29,7 +30,7 @@
 			<div class="lettera " id="lettera1">
 				<img width="480" src="#" id="short">
 				<div class="link_next"></div>
-				<audio></audio>
+				<audio id="audio1"></audio>
 			</div><!-- .lettera #1 -->
 
 			<!-- ////////// -->
@@ -37,7 +38,7 @@
 			<div class="lettera" id="lettera2">
 				<img width="480" src="#" id="long">
 				<div class="link_next"></div>
-				<audio></audio>
+				<audio id="audio2"></audio>
 			</div><!-- .lettera #2 -->
 
 		</div><!-- #container-confronto -->
