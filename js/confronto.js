@@ -24,15 +24,13 @@ active=""
 					var path_audio = '/materiale/audio/vocali/'+path_confronto.lettera.toUpperCase()+'_'
       		audio1 = new Media(path_audio+'S.mp3')
 					audio2 = new Media(path_audio+'L.mp3',onSuccess, onError)
-          audio3 = new Media("http://audio.ibeat.org/content/p1rj1s/p1rj1s_-_rockGuitar.mp3");
-          audio3.play();
         }
 
 
  // onSuccess Callback
         //
         function onSuccess() {
-            alert("playAudio():Audio Success");
+            //alert("playAudio():Audio Success");
         }
 
         // onError Callback 
@@ -68,7 +66,6 @@ $(document).ready(function(){
 	$('#lettera1 img').click(function(){
 		audio1.play()
 
-		alert(audio1)
 		//$('#audio1').get(0).play()
 		play_anim(this);
 	})
