@@ -11,6 +11,7 @@ body {
 	color:#fff;
 	font-family:'Arial Rounded MT Bold';
 	background-repeat:no-repeat;
+	display: none;
 }
 a {
 	color:#fff;

@@ -29,5 +29,6 @@ Zepto(function(e){
     return false
   })
   
-  
+    $('body').fadeIn()
+
 })
