@@ -22,13 +22,15 @@ function parseURLParams(url) {
 }
 
 Zepto(function(e){
-  $('.littlemonster #go_back').on('click',function(e){
-    
-    history.back();
-    e.preventDefault()
-    return false
-  })
-  
-    $('body').fadeIn()
+
+    var torna_indietro = $('.littlemonster #go_back')
+    if (torna_indietro != undefined){
+      torna_indietro.on('click',function(e){
+      history.back();
+      e.preventDefault()
+      return false
+    })
+  }
+
 
 })
